@@ -1,2 +1,3 @@
 pandas
 spacy # for text preprocessing
+tqdm # for progress bars
