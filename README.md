@@ -12,7 +12,7 @@
 ├── output/
 ├── scripts/
 ├── .gitignore
-├── LICENSE
+├── LICENSE.md
 ├── README.md
 └── requirements.txt
 ```
