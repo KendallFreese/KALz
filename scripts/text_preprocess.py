@@ -10,7 +10,7 @@ before running, make sure you have run:
 # load pipeline that doesn't look for named entities or dependency parsing (we just wanna lemmatize)
 nlp = spacy.load("en_core_web_sm", disable=["ner", "parser"])
 
-df = pd.read_csv("data/airport_clean.csv") # read in clean data (RUN FROM ROOT DIR SO PATH WORKS)
+df = pd.read_csv("data/airport_clean.csv") # read in clean data
 
 df['content'] = df['content'].astype(str) # enforce string type for review content column
 
@@ -32,7 +32,7 @@ actually preprocess the text
 """
 print("Preprocessing text...")
 
-# apples preprocessing function defined earlier
+# applies preprocessing function defined earlier
 df['processed_content'] = [
 	preprocess_text(doc)
 	for doc in tqdm(nlp.pipe(df['content'], batch_size=1000), total=len(df))

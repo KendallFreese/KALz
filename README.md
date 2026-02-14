@@ -8,9 +8,13 @@
 [Project Folder]/
 ├── data/
 │   ├── airport.csv
-│   └── airport_clean.csv
+│   ├── airport_clean.csv
+│   └── step2_preprocessed.csv
 ├── output/
+│   └── logistic_results_[timestamp].txt
 ├── scripts/
+│   ├── text_preprocess.py
+│   └── logistic_classifier.py
 ├── .gitignore
 ├── LICENSE.md
 ├── README.md

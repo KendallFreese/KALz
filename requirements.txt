@@ -1,3 +1,4 @@
 pandas
 spacy # for text preprocessing
 tqdm # for progress bars
+scikit-learn # logistic regression, metrics

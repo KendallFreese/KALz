@@ -1,0 +1,14 @@
+--- Final Logistic Regression Results ---
+Test AUC Score: 0.825
+
+              precision    recall  f1-score   support
+
+           0       0.84      0.78      0.81      1381
+           1       0.66      0.74      0.70       789
+
+    accuracy                           0.77      2170
+   macro avg       0.75      0.76      0.75      2170
+weighted avg       0.77      0.77      0.77      2170
+
+Top Recommendation Drivers: ['clean', 'good', 'easy', 'efficient', 'quick']
+Top Negative Drivers: ['bad', 'poor', 'avoid', 'rude', 'queue']
