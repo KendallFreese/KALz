@@ -93,3 +93,17 @@ with output_file.open("w", encoding="utf-8") as f:
 	f.write(f"Top Negative Drivers: {top_negative[:5]}\n")
 
 print(f"Saved results to {output_file}")
+
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, confusion_matrix
+
+# Assuming y_test and y_pred / y_prob are already defined from your C=0.1 model
+print("--- Classification Report ---")
+print(f"Accuracy:  {accuracy_score(y_test, y_pred):.4f}")
+print(f"Precision: {precision_score(y_test, y_pred):.4f}")
+print(f"Recall:    {recall_score(y_test, y_pred):.4f}")
+print(f"F1 Score:  {f1_score(y_test, y_pred):.4f}")
+print(f"ROC-AUC:   {auc_score:.4f}")
+
+# Optional: Confusion Matrix nicely formatted
+cm = confusion_matrix(y_test, y_pred)
+print(f"\nConfusion Matrix:\n{cm}")

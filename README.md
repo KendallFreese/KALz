@@ -37,8 +37,8 @@ In your terminal:
 	- On Windows: `source venv/Scripts/activate`
 ### Run python scripts
 In your terminal:
-- Run preprocessing script: `python SCRIPTS/text_preprocess.py`
+- Run preprocessing script: `python SCRIPTS/01_text_preprocess.py`
 > [!NOTE]
 > Delete `preprocessed.csv` before running this (the script creates this)
-- Run logistic classifer script: `python SCRIPTS/logistic_classifier.py`
+- Run logistic classifer script: `python SCRIPTS/02_logistic_classifier.py`
 	- You will see the output in `OUTPUT/logistic_results_[timestamp].py` with the timestamp of when the script finished running
