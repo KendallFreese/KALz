@@ -24,7 +24,8 @@
 ```
 
 ## 3. How to reproduce our results
-> [!NOTE] Run ALL terminal commands from the root directory
+> [!NOTE]
+> Run ALL terminal commands from the root directory
 
 ### Create a virtual environment and install packages
 Virtual environments isolate your packages to your current environment \
