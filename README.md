@@ -12,26 +12,37 @@
 │   ├── airport.csv
 │   ├── airport_clean.csv
 │   └── step2_preprocessed.csv
+├── MODELS/
+│   ├── .gitkeep
+│   ├── logistic_model.joblib
+│   └── tfidf_vectorizer.joblib
 ├── OUTPUT/
-│   └── logistic_results_[timestamp].txt
+│   ├── [VARIOUS IMAGES]
+│   ├── 	  ...
+│   ├── [VARIOUS IMAGES]
+│   └── test_results.csv
 ├── SCRIPTS/
-│   ├── text_preprocess.py
-│   └── logistic_classifier.py
+│   ├── 01_text_preprocess.py
+│   ├── 02_train_model.py
+│   └── 03_generate_figures.py
+├── venv/
 ├── .gitignore
 ├── LICENSE.md
 ├── README.md
 └── requirements.txt
 ```
+> [!NOTE]
+> The models and venv/ were git ignored due to size; create them using directions below.
 
 ## 3. How to reproduce our results
 > [!NOTE]
-> Run ALL terminal commands from the root directory
+> Run ALL terminal commands from the root directory.
+> Use `python3` instead of `python` if commands aren't running.
 
 ### Create a virtual environment and install packages
 Virtual environments isolate your packages to your current environment \
 In your terminal:
 - Create environment: `python -m venv venv`
-	- May have to use `python3` instead of `python`
 - Activate it:
 	- On macOS: `source venv/bin/activate`
 	- On Windows: `source venv/Scripts/activate`

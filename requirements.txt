@@ -1,5 +1,8 @@
-pandas
-numpy
+pandas # dataframes
+numpy # array operations
 spacy # for text preprocessing
 tqdm # for progress bars
 scikit-learn # logistic regression, metrics
+joblib # exporting model
+matplotlib # plots
+seaborn #better visualizations
