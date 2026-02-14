@@ -39,6 +39,6 @@ df['processed_content'] = [
 ]
 
 # save to new csv
-df.to_csv("data/step2_preprocessed.csv", index=False)
+df.to_csv("data/preprocessed.csv", index=False)
 
-print("Preprocessing complete. Saved to data/step2_preprocessed.csv")
+print("Preprocessing complete. Saved to data/preprocessed.csv")

@@ -12,7 +12,7 @@ from sklearn.metrics import classification_report, roc_auc_score
 STEP 3: TF-IDF VECTORIZATION
 """
 # load preprocessed data
-df = pd.read_csv("data/step2_preprocessed.csv")
+df = pd.read_csv("data/preprocessed.csv")
 
 # fill NaN with empty string just in case
 df['processed_content'] = df['processed_content'].fillna('')
