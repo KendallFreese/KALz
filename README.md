@@ -1,18 +1,20 @@
 # KALz Project 1
 
 ## 1. Software and Platform
-- add here
+- All packages installed located in `requirements.txt`
+> Run `pip install -r requirements.txt` to install all at once
+- Used Mac & Windows during development
 
 ## 2. Repository Map
 ```
 [Project Folder]/
-├── data/
+├── DATA/
 │   ├── airport.csv
 │   ├── airport_clean.csv
 │   └── step2_preprocessed.csv
-├── output/
+├── OUTPUT/
 │   └── logistic_results_[timestamp].txt
-├── scripts/
+├── SCRIPTS/
 │   ├── text_preprocess.py
 │   └── logistic_classifier.py
 ├── .gitignore
@@ -22,4 +24,13 @@
 ```
 
 ## 3. How to reproduce our results
-- add here
+> [!NOTE] Run ALL terminal commands from the root directory
+
+### Create a virtual environment and install packages
+Virtual environments isolate your packages to your current environment \
+In your terminal:
+- Create environment: `python -m venv venv`
+	- May have to use `python3` instead of `python`
+- Activate it:
+	- On macOS: `source venv/bin/activate`
+	- On Windows: `source venv/Scripts/activate`
