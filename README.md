@@ -66,3 +66,18 @@ In your terminal:
 	- Saves model at `DATA/linear_model.joblib`
 - Linear model visual analysis: `python SCRIPTS/05_feature_importance.py`
 	- Saves various images and `.csv` files to `OUTPUT`
+- Run logistic classifer script: `python SCRIPTS/02_logistic_classifier.py`
+	- You will see the output in `OUTPUT/logistic_results_[timestamp].py` with the timestamp of when the script finished running
+
+ ## 4. References
+ [1] J. LaMuraglia, “2025 North America Airport Satisfaction Study,” J.D. Power, Sep. 17, 2025. https://www.jdpower.com/business/press-releases/2025-north-america-airport-satisfaction-study
+ 
+[2] S. Cheglatonyev, PhD, MSc, “Maximizing Non-Aeronautical Revenues: Key to Airport Financial Sustainability | ACI World Insights,” ACI World Insights, May 08, 2025. https://blog.aci.aero/airport-economics/maximizing-non-aeronautical-revenues-key-to-airport-financial-sustainability/
+
+‌[3] S. Wang, F. Karanki, and Y. Gao, “Spatial spillovers in U.S. airport non-aeronautical revenue performance,” Journal of Transport Geography, vol. 130, p. 104452, Jan. 2026, doi: https://doi.org/10.1016/j.jtrangeo.2025.104452.
+
+[4] D. Jurafsky and J. H. Martin, “Speech and Language Processing,” Stanford.edu, 3rd. ed. draft, Jan. 6, 2026. https://web.stanford.edu/~jurafsky/slp3/
+
+[5] quankiquanki, “GitHub - quankiquanki/skytrax-reviews-dataset: An air travel dataset consisting of user reviews from Skytrax (www.airlinequality.com),” GitHub, 2025. https://github.com/quankiquanki/skytrax-reviews-dataset
+
+[6]  “Top 5 Predictive Analytics Models and Algorithms,” insightsoftware, Jan. 01, 2022. https://insightsoftware.com/blog/top-5-predictive-analytics-models-and-algorithms/
