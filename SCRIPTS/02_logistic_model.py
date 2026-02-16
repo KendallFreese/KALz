@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics import f1_score, accuracy_score, precision_score, recall_score
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.linear_model import LogisticRegression
 
@@ -33,7 +34,7 @@ LOGISTIC REGRESSION CLASSIFIER
 """
 # split data into 80% training 20% testing
 X_train, X_test, y_train, y_test, idx_train, idx_test = train_test_split(
-	X, y, df.index, test_size=0.2, random_state=42, stratify=y
+	X, y, df.index, test_size=0.2, random_state=42
 )
 
 # initialize models (added random forest and gradient boosting for comparison)
@@ -61,7 +62,7 @@ joblib.dump(tfidf, "MODELS/tfidf_vectorizer.joblib")
 y_pred = model.predict(X_test)
 y_prob = model.predict_proba(X_test)[:, 1]
 
-# save results to a csv
+# save results and metrics to a csv
 results_df = pd.DataFrame({
     'original_index': idx_test,
     'actual': y_test,
@@ -69,5 +70,16 @@ results_df = pd.DataFrame({
     'probability': y_prob
 })
 
-results_df.to_csv("OUTPUT/test_results.csv", index=False)
+metrics_df = pd.DataFrame({
+    "metric": ["accuracy", "precision", "recall", "f1"],
+    "value": [
+        accuracy_score(y_test, y_pred),
+        precision_score(y_test, y_pred),
+        recall_score(y_test, y_pred),
+        f1_score(y_test, y_pred)
+    ]
+})
+
+metrics_df.to_csv("OUTPUT/log_metrics.csv", index=False)
+results_df.to_csv("OUTPUT/log_test_results.csv", index=False)
 print("Saved to 'MODELS/' and 'OUTPUT/'.")

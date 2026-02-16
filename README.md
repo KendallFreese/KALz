@@ -9,22 +9,27 @@
 ```
 [Project Folder]/
 ├── DATA/
-│   ├── airport.csv
 │   ├── airport_clean.csv
+│   ├── airport.csv
 │   └── step2_preprocessed.csv
 ├── MODELS/
 │   ├── .gitkeep
+│   ├── linear_model.joblib
 │   ├── logistic_model.joblib
 │   └── tfidf_vectorizer.joblib
 ├── OUTPUT/
 │   ├── [VARIOUS IMAGES]
-│   ├── 	  ...
+│   ├──  ...
 │   ├── [VARIOUS IMAGES]
-│   └── test_results.csv
+│   ├── [VARIOUS .CSV FILES]
+│   ├──  ...
+│   └── [VARIOUS .CSV FILES]
 ├── SCRIPTS/
 │   ├── 01_text_preprocess.py
-│   ├── 02_train_model.py
-│   └── 03_generate_figures.py
+│   ├── 02_logistic_model.py
+│   ├── 03_generate_figures.py
+│   ├── 04_linear_model.py
+│   └── 05_feature_importance.py
 ├── venv/
 ├── .gitignore
 ├── LICENSE.md
@@ -33,9 +38,11 @@
 ```
 > [!NOTE]
 > The models and venv/ were git ignored due to size; create them using directions below.
+> You can delete everything in OUTPUT/ and recreate using the scripts if you would like.
 
 ## 3. How to reproduce our results
 > [!NOTE]
+> Ensure python is set up on your system.
 > Run ALL terminal commands from the root directory.
 > Use `python3` instead of `python` if commands aren't running.
 
@@ -48,8 +55,14 @@ In your terminal:
 	- On Windows: `source venv/Scripts/activate`
 ### Run python scripts
 In your terminal:
-- Run preprocessing script: `python SCRIPTS/01_text_preprocess.py`
+- Text preprocessing: `python SCRIPTS/01_text_preprocess.py`
 > [!NOTE]
 > Delete `preprocessed.csv` before running this (the script creates this)
-- Run logistic classifer script: `python SCRIPTS/02_logistic_classifier.py`
-	- You will see the output in `OUTPUT/logistic_results_[timestamp].py` with the timestamp of when the script finished running
+- Logistic Regression classifier: `python SCRIPTS/02_logistic_model.py`
+	- Saves `.csv` files to `OUTPUT/`, model at `DATA/logistic_model.joblib`, and vectorizer at `.DATA/tfidf_vectorizer.joblib`
+- Logistic model visual analysis: `python SCRIPTS/03_generate_figures.py`
+	- Saves various images to `OUTPUT/`
+- Linear Regression predictor: `python SCRIPTS/04_linear_model.py`
+	- Saves model at `DATA/linear_model.joblib`
+- Linear model visual analysis: `python SCRIPTS/05_feature_importance.py`
+	- Saves various images and `.csv` files to `OUTPUT`

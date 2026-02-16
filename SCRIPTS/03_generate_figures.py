@@ -8,7 +8,7 @@ from sklearn.metrics import confusion_matrix, roc_curve, auc
 """ SETUP """
 # load artifacts (model, vectorizer and results)
 print("Loading artifacts...")
-df_results = pd.read_csv("OUTPUT/test_results.csv")
+df_results = pd.read_csv("OUTPUT/log_test_results.csv")
 model = joblib.load("MODELS/logistic_model.joblib")
 vectorizer = joblib.load("MODELS/tfidf_vectorizer.joblib")
 
@@ -19,24 +19,11 @@ sns.set_style("whitegrid")
 MODEL EVALUATION VISUALIZED
 """
 
-# confusion matrix visualization and save to OUTPUT/ folder
-plt.figure(figsize=(6, 5))
-cm = confusion_matrix(df_results['actual'], df_results['predicted'])
-sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', cbar=False,
-            xticklabels=['Pred: Not Rec', 'Pred: Rec'],
-            yticklabels=['Actual: Not Rec', 'Actual: Rec'])
-plt.title("Confusion Matrix")
-plt.ylabel("Actual Label")
-plt.xlabel("Predicted Label")
-plt.tight_layout()
-plt.savefig("OUTPUT/log_confusion_matrix.png")
-plt.close()
-
 # AUC-ROC curve visualization and save to OUTPUT/ folder
 fpr, tpr, _ = roc_curve(df_results['actual'], df_results['probability'])
 roc_auc = auc(fpr, tpr)
 
-plt.figure(figsize=(6, 5))
+plt.figure(figsize=(8, 6))
 plt.plot(fpr, tpr, color='darkorange', lw=2, label=f'ROC curve (area = {roc_auc:.2f})')
 plt.plot([0, 1], [0, 1], color='navy', lw=2, linestyle='--')
 plt.xlim([0.0, 1.0])
@@ -64,7 +51,7 @@ top_pos = feature_df.sort_values('coef', ascending=False).head(10)
 top_neg = feature_df.sort_values('coef', ascending=True).head(10)
 
 # positive driver words chart
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(6, 6))
 sns.barplot(x='coef', y='word', data=top_pos, hue='word', legend=False, palette='Greens_r')
 plt.title("Top 10 Words Driving 'Recommendation' (Positive Coefficients)")
 plt.xlabel("Coefficient Magnitude")
@@ -75,7 +62,7 @@ plt.close()
 # negative driver words chart
 # take absolute value for visualization length,
 # but keep color to indicate negative
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(6, 6))
 sns.barplot(x=top_neg['coef'], y='word', data=top_neg, hue='word', legend=False, palette='Reds_r')
 plt.title("Top 10 Words Driving 'Not Recommended' (Negative Coefficients)")
 plt.xlabel("Coefficient Magnitude")
